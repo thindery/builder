@@ -1,0 +1,12 @@
+[submodule "atk4"]
+	path = atk4
+	url = git://github.com/atk4/atk4.git
+[submodule "atk4-addons"]
+	path = atk4-addons
+	url = git://github.com/atk4/atk4-addons.git
+[submodule "atk4-1"]
+	path = atk4-1
+	url = git://github.com/atk4/atk4.git
+[submodule "atk4-1-addons"]
+	path = atk4-1-addons
+	url = git://github.com/atk4/atk4-addons.git

@@ -1,0 +1,58 @@
+
+<h1>The Job: a "Slot Machine"</h1>
+<p>Imagine a client, who shows up and wants to put your skills to the test by asking you to develop a simple "slot machine". The client is not yet sure of what he needs, but he says he'll figure it out once he gets his hands on a first prototype. His requirements is to make a web page display 3 random digits to the visitor.</p>
+<p>"Simple enough", you say, and write some HTML for this curious task - putting it into templates/default/view/slotmachine.html</p>
+
+<?Example?>
+$grid=$page->add('Grid');
+$grid->setModel('Employee');
+<?/?>
+
+
+<p>Next, you need to generate random numbers and place them into the template slots. This logic should be contained inside a new class file, which must be created inside lib/View/SlotMachine.php:</p>
+<div class="example">
+	<div class="label">Source</div>
+	<div class="actions"><a href="#"><i class="ui-icon ui-icon-comment"></i>Comment</a><a href="#"><i class="ui-icon ui-icon-link"></i>Link</a><a href="#"><i class="ui-icon ui-icon-document"></i>Copy</a></div>
+    <pre class="highlight">
+class View_SlotMachine extends AbstractView {
+    function init(){
+        parent::init();
+        $this->template->set('slot1',rand(1,9));
+        $this->template->set('slot2',rand(1,9));
+        $this->template->set('slot3',rand(1,9));
+    }
+    function defaultTemplate(){
+        return array('view/slotmachine');
+    }
+}
+    </pre>
+</div>
+<div class="example" >
+	<div class="label">Source</div>
+    <pre class="highlight">
+$page->add('View_SlotMachine');
+</div>
+
+
+
+<!--
+<a href="#">View Example Source</a>
+<a href="#">View Source: "Model_People"</a>
+-->
+
+<div class="comments">
+<h2>Comments</h2>
+<!--
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /**
+    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+    */
+  (function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = 'http://atkdemos.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+-->
+</div>
